@@ -24,8 +24,9 @@ if which rvm-prompt &> /dev/null; then
   # ruby='[%{$fg[red]%}$(rvm-prompt i v g s)%{$reset_color%}]'
 else
   if which rbenv &> /dev/null; then
-    ruby='[%{$fg[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}]'
+    # ruby='[%{$fg[red]%}$(rbenv version | sed -e "s/ (set.*$//")%{$reset_color%}]'
     # ruby='[%{$fg[red]%}$(rbenv version-name 2>/dev/null)%{$reset_color%}]'
+    ruby='%{$PR_RED%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$PR_NO_COLOR%}'
   fi
 fi
 
